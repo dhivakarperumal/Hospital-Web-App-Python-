@@ -1,0 +1,31 @@
+{% extends 'Main/main.html' %}
+{% block title %} Home {% endblock title %}
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="{%  static 'CSS/success.css' %}">
+</head>
+
+<body>
+    <div class="mainbody">
+        <div class="containerrr">
+            <div class="success-messages">
+                <img src="{%  static 'IMGS/tick.png' %}" class="imagestick" alt="">
+                <h1 class="heads1">Success!</h1>
+                <p>Your operation was completed successfully.</p>
+                <a href="{% url 'home' %}" class="btns11">Go to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock content %}

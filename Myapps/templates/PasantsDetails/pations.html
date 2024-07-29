@@ -1,0 +1,96 @@
+{%  extends 'Main/main.html' %}
+{%  block title %}  {%  endblock title %}
+{%  load static %}
+
+{%  block content %}
+
+<section class="book_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="" method="post">
+            {%  csrf_token %}
+            <h2>{% if form.instance.pk %} <h4>BOOK <span>PATIONS DETAILS UPDATE</span></h4> {% else %} <h4><b>ADD <span>PATIONS DETAILS</span></b></h4> {% endif %}</h2>
+            
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPatientName">First Name </label>
+                 {{  form.first_name }}
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDoctorName">Last Name</label>
+                {{  form.last_name  }}
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputDepartmentName">Father's Name</label>
+                {{  form.father_name }}
+                
+              </div>
+            </div>
+            <div class="form-row ">
+              <div class="form-group col-lg-4">
+                <label for="inputPhone">Mother's Name</label>
+                {{  form.mother_name }}
+                
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Age</label>
+                {{  form.age }}
+                
+              </div>
+              <div class="form-group col-lg-4">
+                <label for="inputSymptoms">Gender</label>
+                {{  form.gender }}
+              </div>
+            </div>
+
+            <div class="form-row ">
+                <div class="form-group col-lg-4">
+                  <label for="inputPatientName">Email </label>
+                   {{  form.email }}
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputDoctorName">Phone No</label>
+                  {{  form.mobile_no }}
+                  
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputDepartmentName">Address</label>
+                  {{  form.address }}
+                  
+                </div>
+              </div>
+
+              <div class="form-row ">
+                <div class="form-group col-lg-4">
+                  <label for="inputPatientName">Patient Disease </label>
+                   {{  form.patient_disease }}
+                </div>
+                
+                <div class="form-group col-lg-4">
+                    <label for="inputDate">Admission Date </label>
+                    <div class="input-group date"  data-date-format="mm-dd-yyyy">
+                       {{ form.admission_date }}
+                    </div>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="inputDate">Discharge Date </label>
+                    <div class="input-group date"  data-date-format="mm-dd-yyyy">
+                       {{ form.discharge_date }}
+                    </div>
+                </div>
+                <div class="form-group col-lg-4">
+                    <label for="inputDoctorName">Payment Status</label>
+                    {{  form.payment_status  }}
+                </div>
+              </div>
+            <div class="btn-box">
+              <button type="submit" class="btn ">Submit Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{%  endblock content %}

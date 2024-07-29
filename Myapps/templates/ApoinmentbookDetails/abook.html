@@ -1,0 +1,55 @@
+{% extends 'Main/main.html' %}
+{% block title %} Pation Details {% endblock title %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="tab" style="margin-bottom: 30px; margin-top: 20px;">
+    <div class="heading_container heading_center">
+        <h2 style="margin-bottom: 20px;">
+            Book <span>Appoinment</span>
+        </h2>
+    </div>
+
+    <div class="tab" style="margin-bottom: 100px; margin-top: 20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor's Name</th>
+                    <th>Deportment's Name</th>
+                    <th>Phone No</th>
+                    <th>Symptoms</th>
+                    <th>Chooses Date</th>
+
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for data in datas %}
+                <tr>
+                    <td>{{ data.id }}</td>
+                    <td>{{ data.patient_name }}</td>
+                    <td>{{ data.doctor_name }}</td>
+                    <td>{{ data.department_name }}</td>
+                    <td>{{ data.phone_no }}</td>
+                    <td>{{ data.symptoms }}</td>
+                    <td>{{ data.choose_date_1 }}</td>
+                   
+                    <td><a href="{% url 'update' data.pk %}" class="btn btn-primary">Edit</a></td>
+                    <td><a href="{% url 'delete' data.pk %}" class="btn btn-danger">Delete</a></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}
